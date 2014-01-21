@@ -22,6 +22,7 @@
 
   function removeSecondButton(){
     $('#buttonA').detach();
+    $('h1').text('I AM THE KING BUTTON').css('font-size','50px');
   }
 
 
