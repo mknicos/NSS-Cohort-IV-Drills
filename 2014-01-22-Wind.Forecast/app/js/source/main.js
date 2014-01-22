@@ -6,21 +6,29 @@
   $(document).ready(init);
 
   function init(){
-    $('#get-weather').click(getWeather);
-
+    $('#getWind').click(clickGetWind);
   }
 
-  function getWeather(){
-    var url = 'http://api.wunderground.com/api/44ef700b986d88f1/conditions/q/TN/Nashville.json?callback=?';
-    $.getJSON(url, recieve);
+  function clickGetWind(){
+    var url ='http://api.wunderground.com/api/44ef700b986d88f1/conditions/q/TN/Nashville.json?callback=?';
+    $.getJSON(url, request);
+    
+    function request(info){
+      var desc = info.current_observation.wind_string;
+      $('#windDesc').text('The Current wind is: ' + desc);
 
-  }
-  
-  function recieve(data){
-    var temp = data.current_observation.temperature_string;
-    var wind = data.current_observation.wind_mph;
-    $('h2').text(temp);
-    $('h3').text('The Current Wind is: ' + wind + 'mph' );
+      var direction = info.current_observation.wind_dir;
+      $('#direction').text('Its blowing from the :' + direction);
+
+      var degrees = info.current_observation.wind_degrees;
+      $('#degrees').text('From' + degrees);
+
+      var speed = info.current_observation.wind_mph;
+      $('#speedMPH').text('The wind is blowing at: ' + speed + 'mph');
+
+      var gust = info.current_observation.wind_gust_mph;
+      $('#gustMPH').text('With gust up to: ' + gust + 'mph');
+    }
   }
 
 })();
