@@ -20,11 +20,12 @@
     var zipCode = $('#selector').val();
     var url = 'http://api.wunderground.com/api/44ef700b986d88f1/forecast/q/' + zipCode +'.json?callback=?';
     $.getJSON(url, request);
-      
-    function request(data){
-      console.log(data);
-    }
+  }    
+
+  function request(data){
+    console.log(data);
   }
+  
 
 
 })();
