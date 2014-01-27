@@ -4,14 +4,33 @@ html(class='no-js', lang='en')
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Foundation 5
+    title WebCamByZip
     link(rel='stylesheet', href='/css/normalize.css')
     link(rel='stylesheet', href='/css/foundation.css')
     link(rel='stylesheet', href='/css/app.css')
     script(src='/js/vendor/modernizr.js')
   body
+    .row
+      .small-12.collumns
+        h1 Web Cam by ZipCode
+    .row
+      .small-5.collumns
+        input#inputZip(type='text', autofocus, placeholder='ZipCode')
+        button#addZip.radius.tiny Add To List
+      .small-7.collumns
+    .row
+      .small-3.collumns
+        select#selector
+      .small-2.collums
+        button#getCam Get Camera
+        button#clear.alert Clear
+      .small-7collumns
+    .row
+      .small-12-collumns
+        #container
     script(src='/js/vendor/jquery.js')
     script(src='/js/vendor/foundation.js')
     script(src='/js/source/main.js')
     script $(document).foundation();
+
 
