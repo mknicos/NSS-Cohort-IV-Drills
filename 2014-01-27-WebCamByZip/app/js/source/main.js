@@ -9,6 +9,7 @@
   function init(){
     $('#addZip').click(clickAddZip);
     $('#getCam').click(clickGetCam);
+    $('#clear').click(clickClear);
 
   }
 
@@ -27,25 +28,20 @@
 
 
   function recieve(data){
-    var cam1 = data.webcams[0].camurl;
-    var $div = $('<div>');
-    $div = $div.addClass('box');
-    $div.css('background-image', cam1);
-
+    for(var i = 0; i < data.webcams.length; i++){
+      var cam = data.webcams[i].WIDGETCURRENTIMAGEURL;
+      var spot = data.webcams[i].neighborhood;
+      var $div = $('<div>');
+      $div = $div.addClass('box');
+      $div.css('background-image', 'url('+cam+')');
+      $div.text(spot);
+      $('#container').append($div);
+    }
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
+  function clickClear(){
+    $('#container').empty();
+  }
 
 
 })();
