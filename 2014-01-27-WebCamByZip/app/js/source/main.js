@@ -35,7 +35,7 @@
       $div = $div.addClass('box');
       $div.css('background-image', 'url('+cam+')');
       $div.text(spot);
-      $('#container').append($div);
+      $('#container').prepend($div);
     }
   }
 
