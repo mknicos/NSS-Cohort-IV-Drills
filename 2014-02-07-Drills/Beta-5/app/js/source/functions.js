@@ -42,20 +42,25 @@ function sumFibNumbers(num){
 
 function sumPrimeFactors(){
   'use strict';
-
   var factors = [];
   for(var i = 0; i < 13195; i++){
     if(13195 % i === 0){
       factors.push(i);
     }
   }
-  
+  debugger;
+  var x = _.map(factors, function(num){
+    if(testPrime(num)){
+      return num;
+    }
+  });
+  console.log(x);
 }
 
 function testPrime(num){
   'use strict';
 
-  for(var i=2; i < num; i++){
+  for(var i=2; i < Math.sqrt(num); i++){
     if(num % i ===0){
       return false;
     }
@@ -72,7 +77,6 @@ function mixArrays(a,b){
   }
   return newArray;
 }
-
 
 function replaceZero(array){
   'use strict';
