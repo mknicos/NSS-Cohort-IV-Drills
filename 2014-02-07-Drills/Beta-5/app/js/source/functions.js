@@ -49,12 +49,17 @@ function sumPrimeFactors(){
     }
   }
   debugger;
-  var x = _.map(factors, function(num){
+  factors = _.map(factors, function(num){
     if(testPrime(num)){
       return num;
+    }else{
+      return 0;
     }
   });
-  console.log(x);
+  var total = _.reduce(factors, function(sum,num){
+      return sum + num;
+    });
+  return total;
 }
 
 function testPrime(num){
@@ -82,6 +87,7 @@ function replaceZero(array){
   'use strict';
   var r = 0;
   var index = array.length-1;
+
   var newArray = _.forEachRight(array, function(num){
       if(num === 0){
         array[index] = r;
