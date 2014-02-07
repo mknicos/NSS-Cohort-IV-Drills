@@ -1,4 +1,4 @@
-/* global sumMultiple, startLastSix, deepEqual,  test:false */
+/* global sumMultiple, startLastSix, sumFibNumbers, deepEqual,  test:false */
 
 'use strict';
 
@@ -16,4 +16,10 @@ test('functions#sumMultiple', function(){
   var a = sumMultiple();
 
   deepEqual(a, 233168, 'array starts with 6, should return true');
+});
+
+test('functions#fibNumbers', function(){
+  var a = sumFibNumbers(10);
+
+  deepEqual(a, 143, 'the sum of first 10 fib numbers is 134');
 });

@@ -1,4 +1,4 @@
-/*exported sumMultiple, startLastSix*/
+/*exported sumMultiple, sumFibNumbers, startLastSix*/
 
 function startLastSix(array){
   'use strict';
@@ -26,3 +26,18 @@ function sumMultiple(){
   return total;
 }
 
+function sumFibNumbers(num){
+  'use strict';
+  debugger;
+  var array = [1,1];
+  var sum = 0;
+  for(var i = 2; i < num; i++){
+    sum = array[array.length -2] + array[array.length -1];
+    array.push(sum);
+  }
+  var total = _.reduce(array, function(sum,num){
+    debugger;
+    return sum + num;
+  });
+  return total;
+}
