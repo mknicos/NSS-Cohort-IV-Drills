@@ -13,6 +13,7 @@ app.use(app.router);
 
 app.get('/', home.index);
 app.get('/quote/:sym', quote.returnPrice);
+app.get('/quote', quote.returnPrice2);
 
 var server = require('http').createServer(app);
 server.listen(app.get('port'), function(){
